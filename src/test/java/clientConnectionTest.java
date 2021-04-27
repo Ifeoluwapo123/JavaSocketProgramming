@@ -77,7 +77,7 @@ public class clientConnectionTest {
         if ("/".equals(path)) {
             path = "/"+"home.html";
         }else if("/json".equals(path)){
-            path = "/"+"books.json";
+            path = "/"+"http_server.json";
         }
 
         return Paths.get("src/main/resources/", path);
