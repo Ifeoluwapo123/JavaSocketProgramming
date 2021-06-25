@@ -42,7 +42,7 @@ public class HttpConnectionThread extends Thread{
             StringBuilder requestBuilder = new StringBuilder();
             String line;
 
-            while (!(line = br.readLine()).isBlank()) {
+             while (!(line = br.readLine()).isBlank()) {
                 requestBuilder.append(line + "\r\n");
             }
 
@@ -73,7 +73,7 @@ public class HttpConnectionThread extends Thread{
                 sendResponse(socket, "200 OK", contentType, Files.readAllBytes(filePath));
             } else {
                 // 404
-                byte[] notFoundContent = "<h1>Not found :(</h1>".getBytes();
+                byte[] notFoundContent = "HTTP/1.1 404 Internal Error \n\r <h1>Not found :(</h1>".getBytes();
                 sendResponse(socket, "404 Not Found", "text/html", notFoundContent);
             }
 

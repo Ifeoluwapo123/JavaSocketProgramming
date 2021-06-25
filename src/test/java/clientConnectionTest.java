@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 
 
 public class clientConnectionTest {
-
+    
     @Test
     public void pathRoot() throws IOException {
         String result = "";
